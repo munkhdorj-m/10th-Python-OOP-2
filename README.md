@@ -1,4 +1,4 @@
-# Object Oriented Programming (Encapsulation)
+# Object Oriented Programming (Inheritance)
 
 OOP PDF:
 
@@ -10,74 +10,90 @@ https://drive.google.com/file/d/1Dfu8jYSOsRFwReeNXO6nA0ffTYqtH2BT/view?usp=shari
 
 **Problem:**
  
-**Student Grades (Encapsulation):**  
-Create a Student class where the grade is private and safe from incorrect modification.  
+Create a base class `Shape` with an attribute `name`, and a derived class `Rectangle` that adds `width` and `height`.
 
 Requirements:   
-Private attribute: 
+Shape:  
 
-* `__grade`
+* Public attribute: `name`
+* Method: `get_name()` → returns the name
   
-Public methods:
+Rectangle(Shape):  
 
-* `set_grade(val)` - Must be 0–100  
-* `get_grade()`
-  
-Public attribute:
-
-* `name`   
+* Attributes: `width`, `height`
+* Method: `area()` → returns width × height
 
 Example:
 
     Input:
-       s = Student("Bob")
-       s.set_grade(85)
-       print(s.get_grade())
-
+        r = Rectangle("MyRect", 4, 6)
+        print(r.get_name())
+        print(r.area())
+    
     Output:
-       85
+        MyRect
+        24
+
   
 ---
 
 ## Exercise 2
 
 **Problem:**
-Create a class `TemperatureSensor` that simulates reading and updating temperature values safely.
+Create a base class `Animal` with a `sound()` method.   
+Create a derived class `Dog` that overrides the sound.   
 
 Requirements:  
 
-Private attribute: 
-* `__temperature`
+Animal:  
+* Method: `sound()` → returns "Some sound"
 
-Public methods:   
-* `set_temperature(value)`  
-    * Accepts only values between –50°C to 150°C
-    * If the value is invalid, ignore it
-* `get_temperature()` 
-    * Returns the current temperature
-* `increase(amount)`
-    * Increase temperature
-    * Must respect the –50 to 150 range
-* `decrease(amount)`
-    * Decrease temperature
-    * Also must respect the range
+Dog(Animal):  
+* Overridden `sound()` → returns "Bark"
 
-Public attribute: 
-* `location` (e.g., "Server Room")
 
 Example:
 
     Input:
-         sensor = TemperatureSensor("Server Room")
-         sensor.set_temperature(25)
-         sensor.increase(10)
-         print(sensor.get_temperature())   # 35
-         sensor.decrease(100)
-         print(sensor.get_temperature())   # -50 (min limit)
-
+        a = Animal()
+        d = Dog()
+        print(a.sound())
+        print(d.sound())
+    
     Output:
-        35
-        -50
+        Some sound
+        Bark
+
+---
+
+## Exercise 3
+
+**Problem:** 
+Create an `Employee` class with a `name` and `salary`.     
+Create a `Manager` class that inherits from `Employe`e but includes bonus calculation.   
+
+Requirements:  
+
+Employee:
+* `name`
+* `salary`
+* method: `get_salary()`
+
+Manager(Employee): 
+* bonus attribute
+* method: `total_salary()` → salary + bonus
+
+
+Example:
+
+    Input:
+        m = Manager("Erdene", 1200, 300)
+        print(m.get_salary())
+        print(m.total_salary())
+    
+    Output:
+        1200
+        1500
 
 ---
 
