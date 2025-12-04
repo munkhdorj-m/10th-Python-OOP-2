@@ -13,7 +13,7 @@ from assignment import Shape, Rectangle, Animal, Dog, Employee, Manager
         ("Flat", 8, 1, 8),
     ]
 )
-def test_rectangle_area(name, width, height, expected_area):
+def test1(name, width, height, expected_area):
     r = Rectangle(name, width, height)
     assert r.get_name() == name
     assert r.area() == expected_area
@@ -29,7 +29,7 @@ def test_rectangle_area(name, width, height, expected_area):
         (Dog(), "Bark"),
     ]
 )
-def test_animal_dog_sound(animal_obj, expected_sound):
+def test2(animal_obj, expected_sound):
     assert animal_obj.sound() == expected_sound
 
 
@@ -44,7 +44,7 @@ def test_animal_dog_sound(animal_obj, expected_sound):
         ("Cara", 900, 300, 1200),
     ]
 )
-def test_manager_total_salary(name, salary, bonus, expected_total):
+def test3(name, salary, bonus, expected_total):
     m = Manager(name, salary, bonus)
 
     # base class method
